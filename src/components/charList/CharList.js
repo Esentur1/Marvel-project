@@ -5,6 +5,7 @@ import {CSSTransition,TransitionGroup} from 'react-transition-group';
 import useMarvelService from '../../services/MarvelService'; 
 import Spinner from '../spinner/spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
+import setContent from '../../utils/setContent';
 
 
 const CharList = (props) => {
@@ -13,7 +14,7 @@ const CharList = (props) => {
     const [offset, setOffset] = useState(210);
     const [charEnded, setCharEnded] = useState(false);
     const [openCss, setOpenCss] = useState(false);
-    const {loading, error, getAllCharacters} = useMarvelService();
+    const {loading, error, getAllCharacters, process, setProcess} = useMarvelService();
 
     useEffect(() => {
         onCharList();
@@ -56,6 +57,7 @@ const CharList = (props) => {
         initial ? setNewItemLoading(false) : setNewItemLoading(true)
         getAllCharacters(offset)
             .then(onCharListLoaded)
+            .then(() => setProcess('confirmed'))
     }
 
     const {onCharSelected} = props;
