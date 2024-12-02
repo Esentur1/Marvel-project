@@ -47,7 +47,7 @@ const ComicsList = () => {
             imgStyle = <img style={{objectFit: "cover"}} src={item.thumbnail} alt='comic' className="comics__item-img"/>
         return (
             <li className="comics__item" key={i}>
-                <Link to={`/comics/${item.id}`}>
+                <Link to={`/Marvel-project/comics/${item.id}`}>
                     {imgStyle}
                     <div className="comics__item-name">{item.title}</div>
                     <div className="comics__item-price">{item.price}$</div>

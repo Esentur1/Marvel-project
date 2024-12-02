@@ -47,7 +47,7 @@ const SearchCharPanel = (props) => {
         return (
         <>
         <div className='searchcharpanel__positive'>There is! Visit {char.name} page?</div>
-        <Link className="button button__secondary searchcharpanel__link" to={`/${char.id}`}>
+        <Link className="button button__secondary searchcharpanel__link" to={`/Marvel-project/${char.id}`}>
             <div className="inner">TO PAGE</div>
         </Link>
         </>
